@@ -1,3 +1,4 @@
+import { SharedService } from './../../_services/shared.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registor.component.scss']
 })
 export class RegistorComponent implements OnInit {
-
-  constructor() { }
+  public data;  
+  constructor(_dataService: SharedService) {
+    this.data = _dataService.getOption();  
+   }
 
   ngOnInit() {
   }
